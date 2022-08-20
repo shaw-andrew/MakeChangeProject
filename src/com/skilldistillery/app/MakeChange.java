@@ -19,7 +19,7 @@ public class MakeChange {
 
 		else if (cash < cost) {
 			System.out.println(
-					"Please instruct the customer to either put something back or submit more currency and try again.");
+					"Please instruct the customer to either put something back or submit more currency then try again.");
 		}
 
 		else if (cash == cost) {
@@ -65,20 +65,69 @@ public class MakeChange {
 					change -= 20;
 					num20++;
 				}
-				System.out.print(num20 + " x $20 bill");
+				if (num20 >= 1) {
+					System.out.print(num20 + " x $20 bill ");
+				}
 
 			}
-			
+
 			if ((change) >= 10) {
-					change -= 10;
-					num10++;
-				}
-				System.out.print(num10 + " x $10 bill");
-				
+				change -= 10;
+				num10++;
 			}
+			if (num10 > 0)
+				System.out.print(num10 + " x $10 bill ");
+
+			if ((change) >= 5) {
+				change -= 5;
+				num5++;
+			}
+			if (num5 > 0)
+				System.out.print(num5 + " x $5 bill ");
+
+			if ((change) >= 1) {
+				while (change >= 1) {
+					change -= 1;
+					numDoll++;
+				}
+			}
+			if (numDoll > 0)
+				System.out.print(numDoll + " x $1 bill ");
+
+			if ((change) >= .25) {
+				while (change >= .25) {
+					change -= .25;
+					numQuar++;
+				}
+			}
+			if (numQuar > 0)
+				System.out.print(numQuar + " x quarter ");
+
+			if ((change) >= .10) {
+				change -= .10;
+				numDime++;
+			}
+			if (numDime > 0)
+				System.out.print(numDime + " x dime ");
+
+			if ((change) >= .05) {
+				change -= .05;
+				numNick++;
+			}
+			if (numNick > 0)
+				System.out.print(numNick + " x nickel ");
+
+			if ((change) >= .01) {
+				while (change >= .01) {
+					change -= .01;
+					numPenn++;
+				}
+			}
+			if (numPenn > 0)
+				System.out.print(numPenn + " x penny");
 
 		}
 
 	}
 
-
+}
